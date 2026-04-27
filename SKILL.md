@@ -1,6 +1,6 @@
 ---
 name: arrow-design
-description: Arrow Design — Senior-grade HTML design skill. Generates high-fidelity prototypes, interactive demos, slides, animations, and design explorations with a token-enforced design system and senior designer questioning protocol. Trigger words (English): design system, prototype, UI mockup, hi-fi design, app prototype, iOS mockup, slide deck, animation demo, design direction, design review, senior review, accessibility audit, token audit, design variations, landing page design, make it look good, review this design, design critique. 花叔Design（Huashu-Design）fork——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变体探索+设计方向顾问+专家评审的一体化设计能力。新增：设计系统Bootstrap协议（token优先）、用户扩展引用槽（references/user/）、高级设计师问询协议（发现阶段+决策门+交付前核查）、7维度评审（原5维度+用户同理心+韧性）。
+description: "Arrow Design — Senior-grade HTML design skill. Generates high-fidelity prototypes, interactive demos, slides, animations, and design explorations with a token-enforced design system and senior designer questioning protocol. Trigger keywords — design system, prototype, UI mockup, hi-fi design, app prototype, iOS mockup, slide deck, animation demo, design direction, design review, senior review, accessibility audit, token audit, design variations, landing page design, make it look good, review this design, design critique. 花叔Design fork——用HTML做高保真原型、交互Demo、幻灯片、动画、设计变体探索+设计方向顾问+专家评审。新增：设计系统Bootstrap协议、用户扩展引用槽、高级设计师问询协议、7维度评审。"
 ---
 
 # Arrow Design
