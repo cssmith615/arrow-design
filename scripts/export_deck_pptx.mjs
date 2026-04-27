@@ -49,10 +49,28 @@ function parseArgs() {
   return args;
 }
 
+function assertSafePath(resolved, argName) {
+  // When ARROW_SLIDES_BASE is set (e.g. by a server/API wrapper), enforce that
+  // the resolved path stays within the declared base. In plain CLI use where
+  // the calling user controls the argument, the env var is unset and this is a no-op.
+  const base = process.env.ARROW_SLIDES_BASE;
+  if (!base) return;
+  const safeBase = path.resolve(base);
+  const rel = path.relative(safeBase, resolved);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
+    console.error(`Error: --${argName} must be within ARROW_SLIDES_BASE (${safeBase})`);
+    console.error(`Resolved path: ${resolved}`);
+    process.exit(1);
+  }
+}
+
 async function main() {
   const { slides, out } = parseArgs();
   const slidesDir = path.resolve(slides);
   const outFile = path.resolve(out);
+
+  assertSafePath(slidesDir, 'slides');
+  assertSafePath(outFile, 'out');
 
   const files = (await fs.readdir(slidesDir))
     .filter(f => f.endsWith('.html'))

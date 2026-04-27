@@ -85,6 +85,39 @@
 - 在遵循设计哲学的同时是否有个人表达？
 - 是否有「意想不到但很合理」的设计决策？
 
+### 6. User Empathy (用户同理心)
+
+| Score | Standard |
+|------|------|
+| 9-10 | Solves the actual stated user problem, not the assumed one. Evidence of real user context in every design decision. |
+| 7-8 | Addresses the user's core need but makes some assumptions that weren't validated |
+| 5-6 | Solves the surface request but ignores the underlying user goal |
+| 3-4 | Design is built for the designer's preference or the client's preference, not the user's |
+| 1-2 | No apparent consideration of who is using this or why |
+
+**Review criteria**:
+- Does this design solve the problem the user actually has, or the problem we assumed they have?
+- Would a real user in context (commuting, stressed, one-handed) be able to use this?
+- Does the information hierarchy match what the user needs first, or what the business wants to show first?
+- Are there design decisions that serve aesthetics over user comprehension?
+
+### 7. Resilience (韧性 / 边缘情况覆盖)
+
+| Score | Standard |
+|------|------|
+| 9-10 | Empty state, error state, and loading state are all designed. Works with real content at all lengths. |
+| 7-8 | Core states covered; one or two edge cases not addressed |
+| 5-6 | Happy path only — no empty or error states designed |
+| 3-4 | Design breaks with real content (overflow, long strings, missing images) |
+| 1-2 | Only works with the exact placeholder content shown |
+
+**Review criteria**:
+- What does this look like with zero items? Is there a designed empty state?
+- What does this look like with 500 items, or a name that's 60 characters long?
+- Is there an error state? Does it communicate what went wrong and what the user can do?
+- Are loading states accounted for, or does the design assume instant data?
+- Does removing any image or replacing placeholder text with real content break the layout?
+
 ---
 
 ## 场景评审侧重
@@ -98,8 +131,9 @@
 | PPT/Keynote | 视觉层级、功能性 | 细节执行 | 创新性（清晰优先） |
 | PDF/白皮书 | 细节执行、功能性 | 视觉层级 | 创新性（专业优先） |
 | 落地页/官网 | 功能性、视觉层级 | 创新性 | —（全面要求） |
-| App UI | 功能性、细节执行 | 视觉层级 | 哲学一致性（可用性优先） |
+| App UI | User Empathy、Resilience、功能性 | 细节执行、视觉层级 | 哲学一致性（可用性优先） |
 | 小红书配图 | 创新性、视觉层级 | 哲学一致性 | 细节执行（氛围优先） |
+| 交互原型 | User Empathy、Resilience | 功能性、细节执行 | 创新性（真实性优先） |
 
 ---
 
@@ -174,6 +208,9 @@
 - 细节执行：X/10 [一句话说明]
 - 功能性：X/10 [一句话说明]
 - 创新性：X/10 [一句话说明]
+- User Empathy: X/10 [one line]
+- Resilience: X/10 [one line]
+- Token Compliance: PASS / FAIL [hardcoded values found: list them]
 
 ### 优点（Keep）
 - [具体指出做得好的地方，用设计语言描述]

@@ -34,5 +34,41 @@
     "prompt": "做一个跑步记录 App 原型",
     "expected": "overview 平铺；ios_frame.jsx；跑步 App 属高密度型（地图、配速曲线、心率区间、每公里分段数据），每屏 ≥ 3 处产品差异化信息；至少 5 屏（今日总览/跑步中实时数据/路线地图/历史记录/月度统计）；避免撞 AI slop（不用紫渐变、不堆装饰 icon，但数据可视化 icon 允许保留）",
     "tests": "overview + ios_frame + 高密度型数据可视化 + 地图/图表混排 + slop 边界条件"
+  },
+  {
+    "id": 7,
+    "prompt": "Design a mobile banking app for first-time users in rural areas with limited data connectivity",
+    "expected": "Discovery phase fires before any output: asks 3-5 targeted questions covering user context (one-handed? limited connectivity = offline-first architecture?), business vs user goal tension, and content edge cases (account name 60 chars? zero transaction history?). Decision gates surface unprompted: navigation pattern (tab bar locks IA for the whole product), progressive disclosure vs upfront complexity (first-time users need trust, not feature density). Design system bootstrap runs first — design-system.css or :root block produced before any screen HTML. Pre-delivery senior checklist catches: empty state (no transactions yet), error state (connection lost mid-transfer), loading state for slow network — all must be designed.",
+    "tests": "Senior Designer Protocol: discovery phase (context-specific questions) + decision gates fire unprompted + design system bootstrap first + pre-delivery checklist catches state coverage"
+  },
+  {
+    "id": 8,
+    "prompt": "Make a dashboard for a SaaS analytics tool",
+    "expected": "Navigation pattern decision gate fires before generating: sidebar vs top nav locks the IA — explicit user choice required before building. Information density gate fires: power user vs new user determines cognitive load strategy for the entire dashboard. Design system bootstrap produces full :root token block first — all 6 categories. Pre-delivery senior checklist catches: no empty state designed (what shows with zero data?), loading states missing, no error state for failed API fetch. Token audit confirms no hardcoded hex or px values in dashboard HTML.",
+    "tests": "Decision gate protocol: navigation + density gates fire unprompted + design system first + pre-delivery checklist + token audit"
+  },
+  {
+    "id": 9,
+    "prompt": "Build a design system and landing page for my startup",
+    "expected": "Checks references/user/ first for any existing token files or brand specs before generating anything. Design system bootstrap protocol runs: outputs design-system.css with all 6 token categories (color with WCAG contrast ratios stated, type scale, spacing grid, radius, elevation, motion). Declares system verbally including contrast ratios for primary text pairings. Waits for user confirmation before proceeding to landing page HTML. All landing page HTML references --color-*, --type-*, --space-* tokens only — no hardcoded hex values or magic pixel numbers. Pre-delivery token audit reports PASS.",
+    "tests": "Design system bootstrap: references/user/ checked first + full 6-category token output + contrast ratios declared + user confirmation gate + token compliance enforced in HTML"
+  },
+  {
+    "id": 10,
+    "prompt": "Review this app design — is it good?",
+    "expected": "Critique uses all 7 dimensions with scores: 哲学一致性, 视觉层级, 细节执行, 功能性, 创新性, User Empathy (0-10), Resilience (0-10). Token Compliance appears as a PASS/FAIL line with any hardcoded values listed. User Empathy score probes whether the design solves the actual stated user problem or an assumed one. Resilience score probes empty state, error state, overflow content, and long-string coverage. Output follows severity-ranked Fix list: ⚠️致命 / ⚡重要 / 💡优化. Quick Wins section present.",
+    "tests": "7-dimension critique: all new dimensions present + Token Compliance PASS/FAIL + severity-ranked Fix list + Quick Wins"
+  },
+  {
+    "id": 11,
+    "prompt": "Design a recipe app for home cooks",
+    "expected": "Discovery phase asks context-specific questions: who exactly (beginner vs experienced, one-handed while cooking with wet/messy hands?), content edge cases (recipe with 40 ingredients? recipe name 80 characters?), connectivity context (kitchen = phone propped up, distracted user). Decision gates: navigation pattern for recipe browsing (search-first vs tab bar changes entire IA), progressive disclosure of ingredients vs full display. Pre-delivery senior checklist flags: empty state (no saved recipes yet), image loading state (photos load slow), touch targets ≥ 44pt explicitly noted for wet-hands use case. Resilience score in any critique covers the real-content test.",
+    "tests": "Discovery phase: context-specific questions for real use conditions + content edge cases surfaced + resilience checklist applied to cooking-context constraints"
+  },
+  {
+    "id": 12,
+    "prompt": "I have a brand spec file in references/user/ — use my tokens and design a landing page",
+    "expected": "Checks references/user/ before any design work. Loads user-supplied token file as authoritative — does not overwrite user-defined values with defaults. Generates only the token categories not already defined in the user file. All landing page HTML references user-defined token names. Pre-delivery token audit confirms no hardcoded hex or px values override user tokens. Delivery note states which tokens came from user file vs defaults.",
+    "tests": "Tiered reference loader: references/user/ checked and loaded first, user tokens take priority, audit confirms compliance, delivery note distinguishes sources"
   }
 ]
